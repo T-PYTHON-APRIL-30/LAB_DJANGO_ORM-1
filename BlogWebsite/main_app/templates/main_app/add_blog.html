@@ -1,0 +1,44 @@
+{% extends 'main_app/home.html' %}
+
+{% block title %} Add New Post {% endblock%}
+
+{% block home %}
+ <a class="blog-header-logo text-dark" href="{% url 'main_app:index_page' %}">Pre posts</a>
+{% endblock %}
+
+{% block content%}
+<h1>Add Post</h1>
+<div class="container">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="title">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">content</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="content"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">is_published</label>
+            <select class="form-select" aria-label="Default select example" name="is_published">
+                <option value="1">yes</option>
+                <option value="2">no</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">publish_date</label>
+            <input type="date" name="publish_date" />
+        </div>
+
+        <div class="mb-3">
+            <input type="submit" value="Add Post" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+{% endblock %}
