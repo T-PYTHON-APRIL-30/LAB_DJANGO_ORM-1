@@ -1,7 +1,9 @@
 {% extends 'main_app/base.html' %}
 <!--  -->
+{% block title%}add Blog{%endblock%}
+<!--  -->
 {% block content %}
-<h1>Welcome to Blog</h1>
+<h1>Welcome</h1>
 <form method="post">
   {% csrf_token %}
   <div class="mb-3">
@@ -11,7 +13,7 @@
       class="form-control"
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
-      name="title"
+      name="Title"
     />
   </div>
   <div class="mb-3">
@@ -19,14 +21,14 @@
     <textarea
       class="form-control"
       id="exampleInputPassword1"
-      name="content"
+      name="Content"
     ></textarea>
   </div>
   <div class="mb-4">
     <select
       class="form-select"
       aria-label="Default select example"
-      name="published"
+      name="is_published"
     >
       <option selected>Visibility</option>
       <option value="True">Public</option>
@@ -35,9 +37,9 @@
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label"
-      >Release Date</label
+      >publish Date</label
     >
-    <input type="date" name="release_date" />
+    <input type="date" name="publish_date" />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

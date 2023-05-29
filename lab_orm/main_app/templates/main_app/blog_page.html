@@ -4,19 +4,26 @@
 {% block content %}
 
 <!--  -->
-{%for blg in blog%}
-<!--  -->
-<div class="card">
-  <div class="card-header">{{blg.Title}}</div>
-  <div class="card-body">
-    <h5 class="card-title">{{blg.Content}}</h5>
-    <p class="card-text">{{blg.is_published}}</p>
-    <p class="card-text">{{blg.publish_date}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+  <h1 class="mb-4">Welcome to Blog</h1>
+  <div class="row">
+    {%for blg in blog%}
+    <!--  -->
+    <div class="col-2">
+      <div class="card mb-2">
+        <div class="card-header">{{blg.Title}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{blg.Content}}</h5>
+          <p class="card-text">{{blg.is_published}}</p>
+          <p class="card-text">{{blg.publish_date}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
 
 <!--  -->
-{% endfor %}
 <!--  -->
 {% endblock %}
