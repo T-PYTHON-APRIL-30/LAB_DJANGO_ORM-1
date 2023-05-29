@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>blog read</title>
+</head>
+<body>
+    {% for blog in blogs %}
+        <div>
+            <h4>{{ blog.title }}</h4> 
+            <h3>{{ blog.description }}</h3>
+        </div> 
+    {% endfor %}
+
+    <a href="{% url 'solution:add_blog' %}">click here to go back to adding</a>
+</body>

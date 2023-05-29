@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+<title>blog add</title>
+  
+</head>
+<body>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="title">
+
+        <label for="exampleFormControlInput1" class="form-label">Description</label>
+        <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="description"></textarea>
+        <input type="submit" value="create blog" class="btn btn-primary"/>
+    </form>
+
+   
+</body>
