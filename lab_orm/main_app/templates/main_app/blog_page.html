@@ -1,0 +1,22 @@
+{% extends 'main_app/base.html' %}
+<!--  -->
+
+{% block content %}
+
+<!--  -->
+{%for blg in blog%}
+<!--  -->
+<div class="card">
+  <div class="card-header">{{blg.Title}}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{blg.Content}}</h5>
+    <p class="card-text">{{blg.is_published}}</p>
+    <p class="card-text">{{blg.publish_date}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<!--  -->
+{% endfor %}
+<!--  -->
+{% endblock %}
