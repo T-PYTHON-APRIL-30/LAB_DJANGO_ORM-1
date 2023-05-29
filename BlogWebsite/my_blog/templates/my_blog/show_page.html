@@ -1,0 +1,23 @@
+{% extends 'my_blog/base.html' %}
+
+{% block title %}Pro Gamer Games{% endblock %}
+
+{% block content %}
+
+<h3>Our Blog</h3>
+<div class="row">
+
+    {% for blog in blogs %}
+        <div class="card" style="width: 18rem 0; ">
+            <div class="card-body">
+                <h5 class="card-title">{{ blog.title }}</h5>
+                
+                <p class="card-text">{{ blog.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}
