@@ -1,0 +1,24 @@
+post_list.html
+
+{%extends 'base.html'%}
+
+{%block content%}
+<h1> Blog posts</h1>
+{%for post in posts%}
+<h2>{{post.title}}</h2>
+<p>{{post.content}}</p>
+{%endfor%}
+{%endblock%}
+
+post_add.html
+
+{%extends 'base.html%'}
+
+{%block contene%}
+<h1>Add Blog Post</h1>
+<from method="post">
+{%crf_token%}
+{{form.as_p}}
+<button type="submit">Add Post</button>
+</from>
+{%endblock%}
