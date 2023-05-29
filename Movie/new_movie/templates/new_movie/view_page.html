@@ -1,0 +1,27 @@
+{% extends 'new_movie/home.html'%}
+
+{% block page %}  View Page {% endblock %}
+
+{% block process%}
+
+<div class="row">
+    {% for movie in movies %}
+    <div class="col">
+
+        <div class="card" style="width: 18rem; ">
+            
+            <div class="card-body" >
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <p class="card-text" style=" overflow: scroll; height: 180px; text-overflow: ellipsis;">{{movie.content}}</p>
+            <p class="card-text">is published? {{movie.is_published}}</p>
+            <p class="card-text">publish date {{movie.publish_date}}</p>
+        
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+   
+
+{% endblock %}
