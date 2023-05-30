@@ -3,7 +3,7 @@
 {% block content %}
 
   <h1 style="text-align: center">Posts</h1>
-  {% for post in Post %}
+  {% for post in posts %}
     <h2>{{ post.Title }}</h2>
     <p>{{ post.Content }}</p>
     <p>{{ post.publish_date }}</p>
