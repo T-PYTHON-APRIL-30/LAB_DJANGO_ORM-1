@@ -15,6 +15,6 @@ def add_blog(request:HttpRequest):
 
 def index_page(request:HttpRequest):
 
-    posts = Post.objects.all()
+    posts = Post.objects.filter(is_published=True)
 
-    return render(request, "main_app/index.html", {"posts" : posts})
+    return render(request, "main_app/index.html", {"posts" : posts}) 

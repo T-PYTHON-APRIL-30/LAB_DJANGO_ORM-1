@@ -15,12 +15,10 @@
               <strong class="d-inline-block mb-2 text-success">AI</strong>
               <h3 class="mb-0">
                 <a class="text-dark" href="#">{{ post.title }}</a>
+                <div class="row">
+                  <div class="col">rating: {{post.content}}</div>
+              </div>
               </h3>
-              {% if  post.publish_date %}
-              <div class="mb-1 text-muted">is published : yes</div>
-              {% else %}
-              <div class="mb-1 text-muted">is published : no</div>
-              {% endif %}
               <p class="card-text mb-auto">{{post.content}}</p>
               <a href="#">Continue reading</a>
             </div>
