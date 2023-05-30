@@ -2,15 +2,15 @@
 
 {% block content %}
 
-  <h1>Posts</h1>
+  <h1 style="text-align: center">Posts</h1>
   {% for post in Post %}
     <h2>{{ post.Title }}</h2>
     <p>{{ post.Content }}</p>
-    <div>{{ post.publish_date }}</div>
+    <p>{{ post.publish_date }}</p>
     {% if  post.is_published %}
-    <div>publish status: published</div>
+    <p>publish status: published</p>
     {% else %}
-    <div>publish status: not published</div>
+    <p>publish status: not published</p>
     {% endif %}
   {% endfor %}
 
