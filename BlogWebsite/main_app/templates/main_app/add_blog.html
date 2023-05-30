@@ -19,16 +19,22 @@
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">content</label>
-            <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="content"></textarea>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in content" name="content"></textarea>
         </div>
 
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">is_published</label>
-            <select class="form-select" aria-label="Default select example" name="is_published">
-                <option value="1">yes</option>
-                <option value="2">no</option>
-              </select>
-        </div>
+        <label for="exampleFormControlInput1" class="form-label">is_published</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="is_published" id="exampleRadios1" value="0">
+            <label class="form-check-label" for="exampleRadios1">
+              False
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="is_published" id="exampleRadios2" value="1">
+            <label class="form-check-label" for="exampleRadios2">
+              True
+            </label>
+          </div>
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">publish_date</label>
