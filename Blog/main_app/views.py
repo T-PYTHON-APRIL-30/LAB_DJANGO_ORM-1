@@ -13,7 +13,7 @@ def add_post(request):
         form = Form(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('main_app:home')
     else:
         form = Form()
     return render(request, 'add_post.html', {'form': form})
