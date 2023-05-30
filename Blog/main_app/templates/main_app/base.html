@@ -51,52 +51,37 @@
 
         {%block content%}
         <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                {% for item in post %}
-                <!-- Post preview-->
-                    <div class="post-preview">
-                        <div class="container-fluid">
-                            <main class="tm-main">
-                            <div class="row tm-row">
-                                <div class="col-12"></div>
-                            </div>
-                            <div class="row tm-row">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                    {% for item in post %}
+                    <!-- Post preview-->
+                        <div class="post-preview">
+                            {% if item.is_published == True%}
+                                <div style ="display:flex; flex-direction:column;">
+                                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{item.title}}</h2>
                                 
-                                <article class="col-12 col-md-6 tm-post">
-                                    <hr class="tm-hr-primary">
-                                    <a href="##" class="effect-lily tm-post-link tm-pt-60">
-                                        <div class=" tm-post-link-inner">
-                                            <img src="{%static 'images/pasta.jpeg'%}" alt="Image" class="img-fluid">
-                                        </div>
-                                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{item.title}}</h2>
-                                    </a>
                                     <p class="tm-pt-30">
-                                        <a rel="nofollow" href="#" target="_blank"> {{item.content}}</a>  
+                                    <a rel="nofollow" href="#" target="_blank"> {{item.content}}</a>  
                                     </p>
                                     <div class="d-flex justify-content-between tm-pt-45">
-                                        {% if item.is_published == True%}
-                                        <span class="tm-color-primary"> the post is published</span>
-                                        <span class="tm-color-primary">{{item.publish_date}}</span>
-                                        {%endif%}
-                                    </div>
-                                    <hr>
-                                </article>
                                     
+                                    <span class="tm-color-primary"> the post is published</span>
+                                    <span class="tm-color-primary">{{item.publish_date}}</span>
                                 </div>
-                            </main>
+                        {%endif%}
                         </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
+                        
+        
+                    </div>
+                        <!-- Divider-->
+                        <hr class="my-4" />
                     {% endfor %}
-                    
-                    
-                    
+                 
                 </div>
-            </div>
-        </div>
+            
         {%endblock%}
+
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
