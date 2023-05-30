@@ -4,6 +4,9 @@ from .models import blog
 
 # Create your views here.
 
+def home_page(request:HttpRequest):
+    return redirect("solution:read_blog")
+
 def read_blog(request:HttpRequest):
 
     blogs = blog.objects.all()
@@ -13,7 +16,7 @@ def read_blog(request:HttpRequest):
 def add_blog(request:HttpRequest):
 
     if request.method == "POST":
-        new_blog = blog(title=request.POST["title"], description=request.POST["description"])
+        new_blog = blog(title=request.POST["title"], context=request.POST["context"], is_published=request.POST["is_published"], publish_date = request.POST["publish_date"] )
         new_blog.save()
         return redirect("solution:read_blog")
 
