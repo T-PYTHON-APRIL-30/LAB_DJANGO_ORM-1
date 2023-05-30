@@ -11,8 +11,14 @@
         <div class="card" style="width: 18rem 0; ">
             <div class="card-body">
                 <h5 class="card-title">{{ blog.title }}</h5>
-                
                 <p class="card-text">{{ blog.content }}</p>
+                {%if blog.is_published == True%}
+                <p class="card-text">published</p>
+                {%elif blog.is_published == False%}
+                <p class="card-text">Not published</p>
+                {%endif%}
+
+                <p class="card-text">{{blog.publish_date}}</p>
             </div>
         </div>
     {% endfor %}

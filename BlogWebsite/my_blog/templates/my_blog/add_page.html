@@ -15,12 +15,25 @@
         </div>
 
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Description</label>
+            <label for="exampleFormControlInput1" class="form-label">content</label>
             <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="content"></textarea>
         </div>
 
         <div class="mb-3">
-            <input type="submit" value="Create Game" class="btn btn-primary" />
+            <label for="exampleFormControlInput1" class="form-label">Is Published</label>
+            <select class="form-select" aria-label="Default select example" name="is_published">
+                <option value="True">Published</option>
+                <option value="False">Not Published</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Publish Date</label>
+            <input type="date" name="publish_date" />
+        </div>
+
+        <div class="mb-3">
+            <input type="submit" value="Create Blog" class="btn btn-primary" />
         </div>
     </form>
 </div>

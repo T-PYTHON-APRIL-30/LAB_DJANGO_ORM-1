@@ -13,7 +13,8 @@ def show_page(request:HttpRequest):
 def add_page(request:HttpRequest):
 
     if request.method == "POST":
-        new_blog = Blog(title=request.POST["title"], content=request.POST["content"])
+        
+        new_blog = Blog(title=request.POST["title"],content=request.POST["content"],is_published=request.POST["is_published"],publish_date=request.POST["publish_date"])
         new_blog.save()
         return redirect("my_blog:show_page")
     
