@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<div style="text-align: center">
   <h1 style="text-align: center">Posts</h1>
   {% for post in posts %}
     <h2>{{ post.Title }}</h2>
@@ -13,5 +14,5 @@
     <p>publish status: not published</p>
     {% endif %}
   {% endfor %}
-
+</div>
 {% endblock %}
