@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Posts</h1>
+  {% for post in Post %}
+    <h2>{{ post.Title }}</h2>
+    <p>{{ post.Content }}</p>
+    <div>{{ post.publish_date }}</div>
+    {% if  post.is_published %}
+    <div>publish status: published</div>
+    {% else %}
+    <div>publish status: not published</div>
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}
