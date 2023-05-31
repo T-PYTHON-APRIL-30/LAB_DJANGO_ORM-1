@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ProPost.urls'
+ROOT_URLCONF = 'main_app.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ProPost.wsgi.application'
+WSGI_APPLICATION = 'main_app.wsgi.application'
 
 
 # Database

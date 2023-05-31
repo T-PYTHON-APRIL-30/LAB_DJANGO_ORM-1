@@ -24,43 +24,43 @@ def index_page(request:HttpRequest):
     return render(request, "main_app/index.html", {"post" : post})
 
 
-def game_detail(request:HttpRequest, game_id):
+def post_detail(request:HttpRequest, post_id):
 
-    game = Game.objects.get(id=game_id)
+    post = Post.objects.get(id=post_id)
 
-    return render(request, 'main_app/game_detail.html', {"game" : game})
+    return render(request, 'main_app/post_detail.html', {"post" : post})
 
 
-def update_game(request:HttpRequest, game_id):
+def update_post(request:HttpRequest, post_id):
 
-    game = Game.objects.get(id=game_id)
-    iso_date = game.release_date.isoformat()
+    post = Post.objects.get(id=post_id)
+    iso_date = post.release_date.isoformat()
 
-    #updating the game
+    #updating the post
     if request.method == "POST":
-        game.title = request.POST["title"]
-        game.description = request.POST["description"]
-        game.rating = request.POST["rating"]
-        game.release_date = request.POST["release_date"]
-        game.is_published = request.POST["is_published"]
-        game.save()
+        Post.title = request.POST["title"]
+        Post.description = request.POST["description"]
+        Post.rating = request.POST["rating"]
+        Post.release_date = request.POST["release_date"]
+        Post.is_published = request.POST["is_published"]
+        Post.save()
 
         return redirect("main_app:game_detail", game_id=game.id)
 
-    return render(request, 'main_app/update_game.html', {"game" : game, "iso_date" : iso_date})
+    return render(request, 'main_app/update_post.html', {"post" : Post, "iso_date" : iso_date})
 
 
 
-def delete_game(request:HttpRequest, game_id):
+def delete_post(request:HttpRequest, post_id):
     
-    game = Game.objects.get(id=game_id)
-    game.delete()
+    post = Post.objects.get(id=post_id)
+    Post.delete()
 
     return redirect("main_app:index_page")
 
 
 def search_page(request:HttpRequest):
     search_phrase = request.GET.get("search", "")
-    Post = Post.objects.filter(title__contains=search_phrase,)
+    post = Post.objects.filter(title__contains=search_phrase,)
 
     return render(request, "main_app/search_page.html", {"post" : post})
