@@ -5,10 +5,14 @@ from.models import post
 
 # Create your views here.
 
-def post_list(request):
-    post=post.object.fillter(is_published=True).order_by('-published_date')
-    return render(request,'blog/post_list.html',{'post:posts'})
+def add_post(request:HttpRequest):
+    if request.method == "POST":
+            new_blog =new_blog(title=request.POST["title"], content=request.POST["content"], is_published=request.POST["is_published"], publish_date=request.POST["publish_date"])
+            new_blog.save()
+            return redirect("main_app:add_post")
+    return render (request, "main_app/add_blog.html")
 
 def post_add(request:HttpRequest):
-    post_add=post.objects.filter(is_published=True)
-    return render(request, "main_app/post_add.html",{"post_app":post_add})     
+
+   
+    return render(request, "main_app/post_add.html")     
