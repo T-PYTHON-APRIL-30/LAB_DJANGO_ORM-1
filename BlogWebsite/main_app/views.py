@@ -5,7 +5,7 @@ from .models import Post
 
 def add_blog(request:HttpRequest):
     if request.method == "POST":
-            new_blog = Post(title=request.POST["title"], content=request.POST["content"], is_published=request.POST["is_published"], publish_date=request.POST["publish_date"])
+            new_blog = Post(title=request.POST["title"], content=request.POST["content"], is_published=request.POST["is_published"], publish_date=request.POST["publish_date"],img=request.FILES["img"])
             new_blog.save()
             return redirect("main_app:read_blog")
     return render (request, "main_app/add_blog.html")
@@ -27,6 +27,7 @@ def update_blog(request:HttpRequest, i_id):
         blog.content = request.POST["content"]
         blog.publish_date = request.POST["publish_date"]
         blog.is_published = request.POST["is_published"]
+        blog.img = request.FILES["img"]
         blog.save()
         return redirect("main_app:detail_blog",  i_id = blog.id)
      
@@ -36,7 +37,6 @@ def update_blog(request:HttpRequest, i_id):
 def delete_blog (request:HttpRequest, i_id):
     blog = Post.objects.get(id=i_id)
     blog.delete()
-
     return redirect("main_app:read_blog")
 
 def search_page(request:HttpRequest):

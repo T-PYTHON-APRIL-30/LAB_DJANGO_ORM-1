@@ -37,7 +37,7 @@
     </header>
     <div class="container-fluid">
         <main class="tm-main">
-                            <form action="" method="POST" class="mb-5 tm-comment-form">
+                            <form action="" method="POST" class="mb-5 tm-comment-form" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <h2 class="tm-color-primary tm-post-title mb-4">Your Blog</h2>
                                 <div class="mb-4">
@@ -58,6 +58,10 @@
                                 <div class="mb-3">
                                     <label for="birthdaytime" class="form-label">Date and Time:</label>
                                     <input class="form-control" type="datetime-local" name="publish_date">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="birthdaytime" class="form-label">image</label>
+                                    <input class="form-control" type="file" name="img">
                                 </div>
                                 <div class="mb-3">
                                     <input type="submit" value="Submit" class="tm-btn tm-btn-primary tm-btn-small"/>
