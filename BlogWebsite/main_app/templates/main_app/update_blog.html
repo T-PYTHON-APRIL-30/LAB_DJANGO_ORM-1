@@ -42,22 +42,22 @@
                                 <h2 class="tm-color-primary tm-post-title mb-4">Your Blog</h2>
                                 <div class="mb-4">
                                     <label for="exampleFormControlInput1" class="form-label">Title</label>
-                                    <input class="form-control" name="title" type="text">
+                                    <input class="form-control" name="title" type="text" value="{{blog.title}}">
                                 </div>
                                 <div class="mb-4">
-                                    <label for="exampleFormControlInput1" class="form-label">Content:</label>
-                                    <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in content" name="content"></textarea>
+                                    <label for="exampleFormControlInput1" class="form-label">content</label>
+                                    <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in content" name="content">{{blog.content}}:</textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Do you want to publish a blog?</label>
                                     <select class="form-control" aria-label="Default select example" name="is_published">
-                                        <option class="form-control" value="True">True</option>
-                                        <option class="form-control" value="False">False</option>
+                                        <option value="True"  {% if blog.is_published == True %} selected {% endif %}>Published</option>
+                                        <option value="False" {% if blog.is_published == False %} selected {% endif %}>Not Published</option>
                                       </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="birthdaytime" class="form-label">Date and Time:</label>
-                                    <input class="form-control" type="datetime-local" name="publish_date">
+                                    <label for="exampleFormControlInput1" class="form-label">Release Date</label>
+                                    <input class="form-control"  name="publish_date" value="{{iso_date}}" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="birthdaytime" class="form-label">image</label>
